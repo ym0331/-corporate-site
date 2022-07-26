@@ -1,77 +1,9 @@
 <template>
-  <main>
-    <div class="main_contents">
-      <div class="schoolArea contentsArea">
-        <h3>楽しいレッスンで伸びる！続く！</h3>
-        <div class="schoolAbout">
-          <p>
-            お子さまの発達に合わせたレッスンを通し、
-            ただ楽譜通りに演奏するだけでなく、
-            大人になっても音楽を自由に楽しめる“総合的な音楽力” を育みます。
-          </p>
-          <div class="schoolAbout_item">
-            <img
-              src="/img/schoolAbout_teacher.png"
-              width="306"
-              height="162"
-              alt="先生"
-            />
-            <h3>安心の個別指導</h3>
-            <p>楽しいレッスン</p>
-          </div>
-          <div class="schoolAbout_item">
-            <img
-              src="/img/schoolAbout_stepUp.png"
-              width="306"
-              height="162"
-              alt="ステップアップ"
-            />
-
-            <h3>ステップアップ</h3>
-            <p>成長を感じられます</p>
-          </div>
-          <div class="schoolAbout_item">
-            <img
-              src="/img/schoolAbout_people.png"
-              width="306"
-              height="162"
-              alt="老若男女"
-            />
-            <h3>どんな方でも</h3>
-            <p>優しく指導</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="teacherArea">
-        <div class="teacherImg">
-          <img src="/img/teacher.jpg" alt="山田花子先生" />
-          <div class="teacherBox">
-            <div>
-              <p>Teacher</p>
-              <p>先生について</p>
-              <p>山田 花子先生</p>
-            </div>
-          </div>
-        </div>
-        <div class="teacherTxt contentsArea">
-          <dl>
-            <dt>経歴</dt>
-            <dd>〇〇藝術大学付属音楽部高等学校卒業</dd>
-            <dd>〇〇藝術大学卒業</dd>
-            <dd>〇〇藝術大学院卒業</dd>
-            <dt>受賞歴</dt>
-            <dd>第31回ヤングピアノコンクール第1位</dd>
-            <dd>第51回ベートーベン国際ピアノコンクール世界大会金賞</dd>
-          </dl>
-        </div>
-      </div>
-
-      <div class="lessonArea contentsArea">
+     <div class="lessonArea contentsArea">
         <h2>Lesson</h2>
         <p>レッスンの風景を紹介します！</p>
         <div class="lessonImg">
-          <MainCarousel />
+          <CarouselView />
         </div>
         <div class="lessonTxt">
           <p>先生が優しく楽しく指導します。</p>
@@ -81,54 +13,10 @@
         </div>
       </div>
 
-      <AcessArea />
-
-      <div calss="newsListArea contentsArea">
-        <h2>News</h2>
-        <ul class="newsList">
-          <li class="newsListLink">
-            <a href="#">
-              <span class="date">2022.07.19</span>
-              <span class="category">ブログ</span>
-              <p>第20回ウィーンピアノ大会に生徒さんが参加しました！</p>
-            </a>
-          </li>
-          <li class="newsListLink">
-            <a href="#">
-              <span class="date">2022.07.28</span>
-              <span class="category">ブログ</span>
-              <p>第10回ピアノ発表会が開催されました！</p>
-            </a>
-          </li>
-          <li class="newsListLink">
-            <a href="#">
-              <span class="date">2021.12.24</span>
-              <span class="category">ブログ</span>
-              <p>クリスマス会を開催しました！</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="contactArea contentsArea">
-        <!-- <h2>contact</h2>
-                        <span class="headerImg">
-        <img src="/img/contact.png" alt="レッスン" />
-        </span>
-        <a class="index_contact_btn" href="./contact.html"
-          >無料体験・レッスン<br />お申込み</a
-        > -->
-
-        まずは無料体験レッスン
-      </div>
-
-
-    </div>
-  </main>
 </template>
 
 <script>
-import MainCarousel from "./MainCarousel.vue";
+import CarouselView from "./CarouselView.vue";
 import AcessArea from './AcessArea.vue'
 export default {
   name: "MainContents",
@@ -136,7 +24,7 @@ export default {
     msg: String,
   },
   components: {
-    MainCarousel,
+    CarouselView,
     AcessArea,
   },
   // data() {

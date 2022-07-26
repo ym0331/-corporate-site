@@ -1,6 +1,4 @@
 <template>
-  <div class="acessArea">
-    <h2>Access</h2>
     <div class="accessDetailArea accessflex">
       <div class="box1">
         <div class="boxhead accessflex">
@@ -11,7 +9,7 @@
           </div>
         </div>
         <div class="boxfott">
-          <button>お問い合わせはこちら</button>
+          <router-link to="/contactArea"><button>お問い合わせはこちら</button></router-link>
         </div>
       </div>
       <div class="container">
@@ -42,7 +40,6 @@
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
-  </div>
 </template>
 
 <script>
@@ -77,8 +74,7 @@ export default {
 }
 
 .accessDetailArea {
-  width: 80%;
-  margin: 0 auto 40px;
+  margin-bottom: 40px;
 }
 
 .box1 {

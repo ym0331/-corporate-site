@@ -142,7 +142,7 @@ export default {
   width: 18px;
   height: 18px;
   margin: -3px 5px 0 0;
-  background-image: url(../images/mail.svg);
+  /* background-image: url(../images/mail.svg); */
   background-repeat: no-repeat;
   background-size: contain;
   vertical-align: middle;

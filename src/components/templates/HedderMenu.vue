@@ -8,7 +8,7 @@
       </li>
     </ol>
   </div>
-      <img src="/img/piano.jpg" alt="吉澤ピアノ教室" />
+      <!-- <img src="/img/piano.jpg" alt="吉澤ピアノ教室" /> -->
 </template>
 
 <script>
