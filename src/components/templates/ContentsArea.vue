@@ -7,7 +7,7 @@
 
 <script>
 import Access from "@/components/parts/AcessArea.vue";
-import School from "@/components/parts/SchoolArea.vue";
+// import School from "@/components/parts/SchoolArea.vue";
 import Teacher from "@/components/parts/TeacherArea.vue";
 export default {
   name: "MainContents",
@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       contents: [
-        "School",
+        // "School",
          "Teacher",
          "Access"
         ],
