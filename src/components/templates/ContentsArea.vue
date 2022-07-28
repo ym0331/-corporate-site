@@ -8,19 +8,19 @@
 <script>
 import Access from "@/components/parts/AcessArea.vue";
 // import School from "@/components/parts/SchoolArea.vue";
-import Teacher from "@/components/parts/TeacherArea.vue";
+// import Teacher from "@/components/parts/TeacherArea.vue";
 export default {
   name: "MainContents",
   components: {
-    School,
-    Teacher,
+    // School,
+    // Teacher,
     Access,
   },
   data() {
     return {
       contents: [
         // "School",
-         "Teacher",
+        //  "Teacher",
          "Access"
         ],
     };
@@ -30,14 +30,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.contentsArea {
+/* .contentsArea {
   width: 80%;
   margin: 0 auto;
-}
+} */
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   color: #ffffff;
   display: inline-block;
   text-shadow: 1px 1px 1px #f2602d, -1px 1px 1px #f2602d, 1px -1px 1px #f2602d,

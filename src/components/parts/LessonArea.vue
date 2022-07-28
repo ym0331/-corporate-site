@@ -16,17 +16,17 @@
 </template>
 
 <script>
-import CarouselView from "./CarouselView.vue";
-import AcessArea from './AcessArea.vue'
+// import CarouselView from "./CarouselView.vue";
+// import AcessArea from './AcessArea.vue'
 export default {
   name: "MainContents",
   props: {
     msg: String,
   },
-  components: {
-    CarouselView,
-    AcessArea,
-  },
+  // components: {
+  //   CarouselView,
+  //   AcessArea,
+  // },
   // data() {
   //   return {
   //     schedules: [
