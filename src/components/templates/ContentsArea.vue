@@ -1,4 +1,5 @@
-<template>
+<template>  
+
   <transition-group tag="ul" name="list">
     <li
       class="contentsArea"
@@ -18,17 +19,23 @@
 import Access from "@/components/parts/AcessArea.vue";
 import School from "@/components/parts/SchoolArea.vue";
 import Teacher from "@/components/parts/TeacherArea.vue";
+// import Lesson from "@/components/parts/LessonArea.vue";
 export default {
   name: "MainContents",
   components: {
     School,
     Teacher,
+    // Lesson,
     Access,
   },
   data() {
     return {
       visible: false,
-      contents: ["School", "Teacher", "Access"],
+      contents: [
+        "School",
+         "Teacher",
+        // "Lesson",
+          "Access"],
     };
   },
 };
@@ -36,11 +43,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* .contentsArea {
-  width: 80%;
-  margin: 0 auto;
-} */
-
 h2 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -49,16 +51,5 @@ h2 {
   text-shadow: 1px 1px 1px #f2602d, -1px 1px 1px #f2602d, 1px -1px 1px #f2602d,
     -1px -1px 1px #f2602d, 1px 0px 1px #f2602d, 0px 1px 1px #f2602d,
     -1px 0px 1px #f2602d, 0px -1px 1px #f2602d;
-}
-.target {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  color: #fff;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-  border-radius: 10px;
-  font-size: bold;
 }
 </style>

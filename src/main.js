@@ -4,6 +4,7 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
 import { MotionPlugin } from '@vueuse/motion'
+import VueElementLoading from "vue-element-loading";
 
 loadFonts()
 
@@ -11,4 +12,5 @@ createApp(App)
   .use(router)
   .use(vuetify)
   .use(MotionPlugin)
+  .component("VueElementLoading", VueElementLoading)
   .mount('#app')
