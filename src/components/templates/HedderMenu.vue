@@ -8,7 +8,8 @@
       </li>
     </ol>
   </div>
-      <img src="/img/piano.jpg" alt="吉澤ピアノ教室" />
+
+
 </template>
 
 <script>
@@ -16,10 +17,18 @@ export default {
   name: 'HedderMenu',
   data () {
     return {
+            colors: [
+        'indigo',
+        'warning',
+        'pink darken-2',
+        'red lighten-1',
+        'deep-purple accent-4',
+      ],
+      
       items: [
         { title: 'top', path: '/' },
         { title: '教室について', path: '/profile' },
-        { title: '先生について', path: '/profile' },
+        { title: '先生について', path: '/teacher' },
         { title: 'お知らせ', path: '/skills' },
         { title: '申し込み', path: '/outputs' }
       ]

@@ -3,28 +3,25 @@
     <!-- <HedderMenu /> -->
     <!-- <router-link to="/contactArea">contactArea</router-link> -->
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-<ContentsArea />
-    <!-- <AcessArea /> -->
-    <!-- <FotterMenu /> -->
+    <ContentsArea />
+    <FotterMenu />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HedderMenu from '@/components/templates/HedderMenu.vue'
-import ContentsArea from '@/components/templates/ContentsArea.vue'
-// import AcessArea from '@/components/parts/AcessArea.vue'
-// import FotterMenu from '@/components/templates/FotterMenu.vue'
+import ContentsArea from "@/components/templates/ContentsArea.vue";
+import FotterMenu from '@/components/templates/FotterMenu.vue'
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     // HedderMenu,
     ContentsArea,
-    // AcessArea,
-    // FotterMenu,
-  }
-}
+    FotterMenu,
+  },
+};
 </script>
 
 <style scoped>

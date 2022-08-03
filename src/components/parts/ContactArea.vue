@@ -69,14 +69,6 @@ h3 {
   margin-bottom: 30px;
 }
 
-.box {
-  width: 90%;
-  height: 500px;
-  max-width: 800px;
-  background-color: darkblue;
-  margin: 20px auto;
-}
-
 /* schoolArea */
 .schoolAbout {
   display: flex;

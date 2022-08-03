@@ -1,5 +1,6 @@
 <template>
-     <div class="lessonArea contentsArea">
+          <CarouselView />
+     <!-- <div class="lessonArea contentsArea">
         <h2>Lesson</h2>
         <p>レッスンの風景を紹介します！</p>
         <div class="lessonImg">
@@ -11,35 +12,20 @@
             また、年に１度、大きなホールを借りて発表会が行われます。（参加は自由です。）
           </p>
         </div>
-      </div>
+      </div> -->
 
 </template>
 
 <script>
-// import CarouselView from "./CarouselView.vue";
-// import AcessArea from './AcessArea.vue'
+import CarouselView from "./CarouselView.vue";
 export default {
   name: "MainContents",
   props: {
     msg: String,
   },
-  // components: {
-  //   CarouselView,
-  //   AcessArea,
-  // },
-  // data() {
-  //   return {
-  //     schedules: [
-  //       { day: "月", morning: "〇", after: "〇" },
-  //       { day: "火", morning: "〇", after: "〇" },
-  //       { day: "水", morning: "", after: "" },
-  //       { day: "木", morning: "〇", after: "〇" },
-  //       { day: "金", morning: "〇", after: "〇" },
-  //       { day: "土", morning: "〇", after: "〇" },
-  //       { day: "日/祝", morning: "", after: "" },
-  //     ],
-  //   };
-  // },
+   components: {
+    CarouselView,
+   },
 };
 </script>
 
@@ -81,15 +67,6 @@ h3 {
   width: 8vw;
   margin-bottom: 30px;
 }
-
-.box {
-  width: 90%;
-  height: 500px;
-  max-width: 800px;
-  background-color: darkblue;
-  margin: 20px auto;
-}
-
 /* schoolArea */
 .schoolAbout {
   display: flex;
