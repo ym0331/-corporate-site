@@ -1,5 +1,5 @@
 <template>  
-
+        <!-- <v-img src="/img/piano.jpg"></v-img> -->
   <transition-group tag="ul" name="list">
     <li
       class="contentsArea"
@@ -17,13 +17,13 @@
 
 <script>
 import Access from "@/components/parts/AcessArea.vue";
-import School from "@/components/parts/SchoolArea.vue";
+// import School from "@/components/parts/SchoolArea.vue";
 import Teacher from "@/components/parts/TeacherArea.vue";
 // import Lesson from "@/components/parts/LessonArea.vue";
 export default {
   name: "MainContents",
   components: {
-    School,
+    // School,
     Teacher,
     // Lesson,
     Access,
@@ -32,7 +32,7 @@ export default {
     return {
       visible: false,
       contents: [
-        "School",
+        // "School",
          "Teacher",
         // "Lesson",
           "Access"],
