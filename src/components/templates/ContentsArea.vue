@@ -1,129 +1,35 @@
 <template>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
   <transition-group tag="ul" name="list">
     <li
       class="contentsArea"
       v-for="content in contents"
       :key="content"
-      v-show="visible"
       :id="content"
     >
-      <h2>{{ content }}</h2>
-      <component :is="content"></component>
+      <div v-motion-pop-visible>
+        <h2>{{ content }}</h2>
+        <component :is="content"></component>
+      </div>
     </li>
   </transition-group>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>フェー</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>ドイン</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>アウト</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
-  <p>するよ</p>
 </template>
 
 <script>
 import Access from "@/components/parts/AcessArea.vue";
-// import School from "@/components/parts/SchoolArea.vue";
-// import Teacher from "@/components/parts/TeacherArea.vue";
+import School from "@/components/parts/SchoolArea.vue";
+import Teacher from "@/components/parts/TeacherArea.vue";
 export default {
   name: "MainContents",
   components: {
-    // School,
-    // Teacher,
+    School,
+    Teacher,
     Access,
   },
   data() {
     return {
       visible: false,
-      contents: [
-        //   "School",
-        // "Teacher",
-        "Access",
-      ],
+      contents: ["School", "Teacher", "Access"],
     };
-  },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      this.a = document.getElementById("Access").getBoundingClientRect();
-      console.log("top:" + this.a.top);
-      this.scrollY = window.scrollY;
-      if (!this.visible) {
-        this.visible = window.scrollY > this.a.top;
-      } else if (window.scrollY < this.a.top) {
-        this.visible = !this.visible;
-      }
-    },
   },
 };
 </script>
@@ -144,22 +50,15 @@ h2 {
     -1px -1px 1px #f2602d, 1px 0px 1px #f2602d, 0px 1px 1px #f2602d,
     -1px 0px 1px #f2602d, 0px -1px 1px #f2602d;
 }
-
-.v-enter {
-  opacity: 0;
-}
-
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 1s;
-}
-
-.v-enter-to {
-  opacity: 1;
-}
-
-.v-leave-to {
-  opacity: 0;
-  transition: opacity 1s;
+.target {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border-radius: 10px;
+  font-size: bold;
 }
 </style>

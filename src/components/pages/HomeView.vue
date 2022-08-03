@@ -3,7 +3,7 @@
     <!-- <HedderMenu /> -->
     <!-- <router-link to="/contactArea">contactArea</router-link> -->
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-    <ContentsArea />
+<ContentsArea />
     <!-- <AcessArea /> -->
     <!-- <FotterMenu /> -->
   </div>
