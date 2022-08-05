@@ -1,4 +1,5 @@
 <template>
+<div>
   <CarouselView />
   <!-- <v-img src="/img/piano.jpg"></v-img> -->
   <transition-group tag="ul" name="list">
@@ -14,23 +15,26 @@
       </div>
     </li>
   </transition-group>
+  </div>
 </template>
 
 <script>
 import CarouselView from "@/components/parts/CarouselView.vue";
 
-import Access from "@/components/parts/AcessArea.vue";
+// import Access from "@/components/parts/AcessArea.vue";
 // import School from "@/components/parts/SchoolArea.vue";
 import Teacher from "@/components/parts/TeacherArea.vue";
 // import Lesson from "@/components/parts/LessonArea.vue";
+import News from "@/components/parts/NewsArea.vue";
 export default {
   name: "MainContents",
   components: {
     // School,
     Teacher,
     // Lesson,
-    Access,
+    // Access,
     CarouselView,
+    News,
   },
   data() {
     return {
@@ -39,7 +43,8 @@ export default {
         // "School",
         "Teacher",
         // "Lesson",
-        "Access",
+        // "Access",
+        "News",
       ],
     };
   },
