@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <!-- <HedderMenu /> -->
+    <HedderMenu />
     <!-- <router-link to="/contactArea">contactArea</router-link> -->
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <ContentsArea />
@@ -10,14 +10,14 @@
 
 <script>
 // @ is an alias to /src
-// import HedderMenu from '@/components/templates/HedderMenu.vue'
+import HedderMenu from '@/components/templates/HedderMenu.vue'
 import ContentsArea from "@/components/templates/ContentsArea.vue";
 import FotterMenu from '@/components/templates/FotterMenu.vue'
 
 export default {
   name: "HomeView",
   components: {
-    // HedderMenu,
+    HedderMenu,
     ContentsArea,
     FotterMenu,
   },

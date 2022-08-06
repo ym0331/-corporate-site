@@ -1,57 +1,34 @@
 <template>
   <div>
-    <ol>
-      <li v-for="(item, index) in items" :key=index>
-         <router-link v-bind:to=item.path>
-            {{ item.title }}
-         </router-link>
-      </li>
-    </ol>
+    <v-app-bar color="white" dense dark flat>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+      <v-toolbar-title class="title">吉澤ピアノ教室</v-toolbar-title>
+
+      <v-tab v-for="item in items" :key="item" :href="item.path">{{ item.title }}</v-tab>
+    </v-app-bar>
   </div>
-
-
 </template>
 
 <script>
 export default {
-  name: 'HedderMenu',
-  data () {
+  name: "HedderMenu",
+  data() {
     return {
-            colors: [
-        'indigo',
-        'warning',
-        'pink darken-2',
-        'red lighten-1',
-        'deep-purple accent-4',
-      ],
-      
       items: [
-        { title: 'top', path: '/' },
-        { title: '教室について', path: '/profile' },
-        { title: '先生について', path: '/teacher' },
-        { title: 'お知らせ', path: '/skills' },
-        { title: '申し込み', path: '/outputs' }
+        { title: "先生について", path: "#Teacher" },
+        { title: "アクセス", path: "#Access" },
+        { title: "新着情報", path: "#News" },
+        { title: "お問い合せ", path: "/contactArea" }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
-
-ol {
-  margin-left: auto;
-  display:flex;
-  justify-content: center;
-  padding: 0;
-  list-style: none;
+.title {
+  text-align: left;
+  margin-left: 20px;
 }
-
-li {
-  width: 100px;
-  margin:10px;
-  position: relative;
-}
-
-
 </style>

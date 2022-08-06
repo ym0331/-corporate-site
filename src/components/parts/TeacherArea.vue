@@ -31,6 +31,7 @@ export default {
 .teacherImg {
   border-radius: 6px;
   margin-bottom: 30px;
+    position: relative;
 }
 
 .teacherTxt {
@@ -47,5 +48,25 @@ export default {
   font-size: 1.12em;
   margin-bottom: 5px;
 }
+
+.teacherBox {
+   display: table;
+   width: 28vw;
+   height: 15vw;
+   text-align: center;
+   background-color: rgba(255, 255, 255, 0.98);
+   border-radius: 6px;
+   position: absolute;
+   right: 2.8vw;
+   top: 2.8vw;
+ }
+
+ .teacherBox div {
+   display: table-cell;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   vertical-align: middle;
+ }
 
 </style>

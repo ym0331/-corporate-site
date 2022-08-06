@@ -1,20 +1,16 @@
 <template>
-<div>
-  <CarouselView />
-  <!-- <v-img src="/img/piano.jpg"></v-img> -->
-  <transition-group tag="ul" name="list">
-    <li
-      class="contentsArea"
-      v-for="content in contents"
-      :key="content"
-      :id="content"
-    >
-      <div v-motion-pop-visible>
-        <h2>{{ content }}</h2>
-        <component :is="content"></component>
-      </div>
-    </li>
-  </transition-group>
+  <div>
+    <CarouselView />
+    <!-- <v-img src="/img/piano.jpg"></v-img> -->
+    <transition-group tag="ul" name="list">
+      <li class="contentsArea" v-for="content in contents" :key="content" :id="content">
+        <!-- <div v-motion-pop-visible> -->
+        <div>
+          <h2>{{ content }}</h2>
+          <component :is="content"></component>
+        </div>
+      </li>
+    </transition-group>
   </div>
 </template>
 
@@ -34,7 +30,7 @@ export default {
     // Lesson,
     Access,
     CarouselView,
-    News,
+    News
   },
   data() {
     return {
@@ -44,10 +40,10 @@ export default {
         "Teacher",
         // "Lesson",
         "Access",
-        "News",
-      ],
+        "News"
+      ]
     };
-  },
+  }
 };
 </script>
 
@@ -61,5 +57,9 @@ h2 {
   text-shadow: 1px 1px 1px #f2602d, -1px 1px 1px #f2602d, 1px -1px 1px #f2602d,
     -1px -1px 1px #f2602d, 1px 0px 1px #f2602d, 0px 1px 1px #f2602d,
     -1px 0px 1px #f2602d, 0px -1px 1px #f2602d;
+}
+.contentsArea {
+  margin-top: -64px;
+  padding-top: 64px;
 }
 </style>

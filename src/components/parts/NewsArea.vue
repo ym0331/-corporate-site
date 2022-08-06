@@ -25,7 +25,6 @@ export default {
       .get("https://www.portfolio-ym.site/wp/wp-json/wp/v2/posts/")
       .then(response => {
         this.posts = response.data;
-        console.log(this.posts)
       }),
       (this.moment = moment);
   }
