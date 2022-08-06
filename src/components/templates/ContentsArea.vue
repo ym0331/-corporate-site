@@ -21,7 +21,7 @@
 <script>
 import CarouselView from "@/components/parts/CarouselView.vue";
 
-// import Access from "@/components/parts/AcessArea.vue";
+import Access from "@/components/parts/AcessArea.vue";
 // import School from "@/components/parts/SchoolArea.vue";
 import Teacher from "@/components/parts/TeacherArea.vue";
 // import Lesson from "@/components/parts/LessonArea.vue";
@@ -32,7 +32,7 @@ export default {
     // School,
     Teacher,
     // Lesson,
-    // Access,
+    Access,
     CarouselView,
     News,
   },
@@ -43,7 +43,7 @@ export default {
         // "School",
         "Teacher",
         // "Lesson",
-        // "Access",
+        "Access",
         "News",
       ],
     };
