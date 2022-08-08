@@ -1,6 +1,6 @@
 <template>
   <header>
-    <v-app-bar app dark>
+    <v-app-bar app dark flat>
       <!-- タブレット以上の表示 -->
       <div class="d-none d-sm-flex">
         <v-toolbar-title class="title">吉澤ピアノ教室</v-toolbar-title>
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .title {
   text-align: left;
   margin-left: 20px;
