@@ -1,150 +1,265 @@
 <template>
-    <main class="main_contents">
-      <h2>
-        <span class="h2_large">お問い合わせ</span>
-        <span class="h2_small">contact</span>
-      </h2>
+  <main class="contactArea">
+    <h2>体験レッスンのお申し込み</h2>
 
-      <div class="contact_text_area">
-      <p>当社に関するお問い合わせは、こちらからお願いいたします。<br>
-        以下のWEBサイトにおける個人情報の取得と利用についてに同意及び必要事項をご入力の上、「送信」ボタンを押してください。</p>
-      <p class="text_caution">※は必須項目です。</p>
-      </div>
-      <form action="sample.cgi" method="post">
-        <dl class="contactform">
-          <dt>
-            会社名
-            <span class="form__required">※</span>
-          </dt>
-          <dd><input type="text" name="company" tabindex="1"></dd>
-          <dt>
-            ご担当者様氏名
-            <span class="form__required">※</span>
-          </dt>
-          <dd><input type="text" name="name" tabindex="2"></dd>
-          <dt>
+    <div class="contact_text_area">
+      <p>
+        こちらから体験レッスンにお申し込みいただけます。
+        <br />以下の個人情報ついてに同意及び必要事項をご入力の上、「送信」ボタンを押してください。
+      </p>
+    </div>
+    <form action="sample.cgi" method="post">
+      <dl>
+        <dt>
+          <label for="name">
+            お子様のお名前
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="text" id="name" v-model="contactData.name" />
+        </dd>
+        <dt>
+          <label for="date">
+            体験レッスン日
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="date" id="date" v-model="contactData.date" />
+        </dd>
+        <dt>
+          お子様の性別
+          <span class="required">必須</span>
+        </dt>
+        <dd>
+          <input type="radio" id="girl" value="女" v-model="contactData.sex" />
+          <label for="girl">女</label>
+          <input type="radio" id="boy" value="男" v-model="contactData.sex" />
+          <label for="boy">男</label>
+          <input type="radio" id="private" value="非公開" v-model="contactData.sex" />
+          <label for="private">非公開</label>
+        </dd>
+        <dt>
+          <label for="age">
+            お子様の年齢
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="number" id="age" v-model.number="contactData.age" />
+        </dd>
+        <dt>
+          <label for="guardian">
+            保護者様のお名前
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="text" id="guardian" v-model="contactData.guardian" />
+        </dd>
+        <dt>
+          <label for="email">
             メールアドレス
-            <span class="form__required">※</span>
-          </dt>
-          <dd><input type="email" name="email" tabindex="3"></dd>
-          <dt>
-            電話番号
-            <span class="form__required">※</span>
-          </dt>
-          <dd><input type="text" name="tel" tabindex="4"></dd>
-          <dt>
-            お問い合わせタイプ
-            <span class="form__required">※</span>
-          </dt>
-          <dd><select name="category" tabindex="5">
-              <option value="contract" selected>新規契約</option>
-              <option value="request">資料請求</option>
-            </select></dd>
-          <dt>
-            お問い合わせ内容
-            <span class="form__required">※</span>
-          </dt>
-          <dd><textarea name="message" cols="50" rows="5"  tabindex="6" placeholder="ここにお問い合わせ内容を記入してください。"></textarea></dd>
-        </dl>
-        <div class="consent_form_area" tabindex="7">
-          <p>「WEBサイトにおける個人情報の取得と利用について」必ず内容をご確認ください</p>
-          <div class="consent_form">
-            <div>
-              <p><strong>WEBサイトにおける個人情報の取得と利用について</strong></p>
-            </div>
-            <div>
-              <p>
-                ご入力頂いた個人情報はハッピーウォーター株式会社（個人情報保護管理者：営業担当役員【電話：03-0000-0000】）が、(1)お問い合せの回答のため、(2)本人から請求の個人情報の開示等に応じる目的のために利用します。<br>
-                また上記利用目的(1)達成のため、個人情報の取り扱いに関して記載した契約を結んでいる加盟店及び販売代理店及び取次店へご入力頂いた個人情報の全てを、直接渡し、FAX、郵送、ネットワークを通じた方法等で提供致します。<br>
-                ご入力頂いた開示対象個人情報の利用目的の通知・開示・訂正・追加・利用停止等については、下記の弊社お客様センターまでお問合せ下さい。ご本人と確認出来しだい対応致します。<br>
-                ハッピーウォーターお客様センター電話：0120-000-0000もしくはこちらのお問合せフォームよりお問い合わせ下さい。</p>
-            </div>
+            <span class="required">必須</span>
+          </label>
+        </dt>
+        <dd>
+          <input type="email" id="email" v-model="contactData.email" />
+        </dd>
+
+        <dt>
+          <label for="message">質問・連絡事項</label>
+        </dt>
+        <dd>
+          <textarea
+            name="message"
+            cols="50"
+            rows="5"
+            id="message"
+            placeholder="ご質問・ご連絡事項などありましたらこちらに入力してください"
+          ></textarea>
+        </dd>
+
+        <dt>個人情報の取り扱いについて</dt>
+        <dd class="consent_form">
+          <strong>個人情報の取り扱いについて</strong>
+          <div>
+            <p>本ページでご入力いただくお客様の個人情報は、吉澤ピアノ教室の体験レッスン参加へのお申し込み受付が目的で、これ以外の目的に使用することはございません。また、お申し込み店での個人情報の扱いも、上記目的に限定致しております。いただいた個人情報は、お客様の同意なしに第三者に開示、提供することはございません。</p>
           </div>
-        </div>
-        <p class="consent_chk">
-          <input type="checkbox" name="consent-chk" id="consent_chks" value="consent_chks" tabindex="8">
-          <label for="consent_chks">「WEBサイトにおける個人情報の取得と利用について」同意する</label>
-        </p>
-        <p class="contact_btn_area">
-          <button type="submit" name="submit" value="submit" class="submit contact_btn" tabindex="9">送信</button>
-          <input type="reset" class="reset contact_btn" value="リセット" tabindex="10">
-        </p>
-      </form>
-    </main>
+        </dd>
+      </dl>
+
+      <p class="consent_chk">
+        <input type="checkbox" id="consent" v-model="contactData.consent" />
+        <label for="consent">「個人情報の取り扱いについて」同意する</label>
+      </p>
+      <v-container class="contact_btn_area">
+        <v-row justify="center">
+          <v-col xs="12">
+            <input type="submit" class="submit contact_btn" />
+          </v-col>
+          <v-col xs="12">
+            <input type="reset" class="reset contact_btn" />
+          </v-col>
+        </v-row>
+      </v-container>
+    </form>
+  </main>
 </template>
 
 <script>
 export default {
   name: "contactArea",
-  // data() {
-  //   return {
-  //     schedules: [
-  //       { day: "月", morning: "〇", after: "〇" },
-  //       { day: "火", morning: "〇", after: "〇" },
-  //       { day: "水", morning: "", after: "" },
-  //       { day: "木", morning: "〇", after: "〇" },
-  //       { day: "金", morning: "〇", after: "〇" },
-  //       { day: "土", morning: "〇", after: "〇" },
-  //       { day: "日/祝", morning: "", after: "" },
-  //     ],
-  //   };
-  // },
+  data() {
+    return {
+      contactData: {
+        name: "",
+        sex: "女",
+        age: "",
+        guardian: "",
+        email: "",
+        date: "",
+        consent: false
+      }
+    };
+  }
 };
 </script>
 
 <style scoped>
-
-/* お申し込み */
-.contact_wrap {
-  width: 100%;
-  background-color: #eef5f7;
-  padding: 50px 0;
-  box-sizing: border-box;
-  margin-bottom: 70px;
-}
-
-.contact_wrap div {
-  text-align: center;
-  width: 1000px;
+.contactArea {
+  width: 80%;
   margin: 0 auto;
-  background-color: #fff;
+  padding: 30px 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-shadow: 1px 1px 1px #f2602d, -1px 1px 1px #f2602d, 1px -1px 1px #f2602d,
+    -1px -1px 1px #f2602d, 1px 0px 1px #f2602d, 0px 1px 1px #f2602d,
+    -1px 0px 1px #f2602d, 0px -1px 1px #f2602d;
+}
+
+.contact_text_area {
+  margin: 20px 0;
+}
+
+dt {
+  font-size: 1.25rem;
+}
+
+.required {
+  color: white;
+  background-color: #f2602d;
   border-radius: 10px;
-  padding: 40px 0;
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  padding: 0 7px 1px;
+  white-space: nowrap;
 }
 
-.contact_wrap h2 {
-  color: #29B6CA;
+dd {
+  margin-bottom: 15px;
 }
 
-.index_contact_btn {
-  position: relative;
-  color:#fff;
-  font-weight: 600;
-  background: #ffb730;
-  text-align: center;
-  border: 1px solid #ffb730;
-  box-shadow:0px 2px 5px 0px rgb(75 81 83 / 0.15);
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+textarea {
+  width: 100%;
+  border: 1px solid #d7d7d7;
   border-radius: 4px;
-  line-height :1.8em;
-  padding: 13px 30px;
-  text-decoration: none;
-  max-width: 1000px;
-  display: inline-block;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font-size: 1.12em;
 }
 
-.index_contact_btn:hover {
-	background-color: #fcbd49;
+input:focus,
+textarea:focus {
+  border-color: #f2602d;
+  outline: 0;
 }
 
-.index_contact_btn:before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin: -3px 5px 0 0;
-  /* background-image: url(../images/mail.svg); */
-  background-repeat: no-repeat;
-  background-size: contain;
-  vertical-align: middle;
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+label {
+  margin-right: 30px;
+  font-size: 1.12em;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+.consent_form_area {
+  margin-bottom: 30px;
+}
+
+.consent_form p strong {
+  font-weight: 600;
+}
+.consent_form {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid #d7d7d7;
+  padding: 20px;
+  height: 150px;
+}
+
+.consent_chk {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 同意・リセットボタン */
+.v-col {
+  flex-grow: 0;
+}
+
+.contact_btn_area {
+  text-align: center;
+}
+
+.contact_btn {
+  text-align: center;
+  width: 200px;
+  height: 3em;
+  font-size: 1em;
+  border-radius: 5px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 0px 2px 5px 0px rgb(75 81 83 / 0.15);
+}
+
+/* 送信ボタン */
+.submit {
+  background-color: #f2602d;
+  color: #fff;
+  border: 1px solid #f2602d;
+}
+.submit:hover {
+  background-color: #fff;
+  color: #f2602d;
+}
+
+/* リセットボタン */
+.reset {
+  background-color: #e5e5e5;
+  color: #282828;
+}
+
+.reset:hover {
+  background-color: #efefef;
 }
 </style>
