@@ -36,7 +36,8 @@ export default {
         { title: "先生について", path: "#Teacher" },
         { title: "アクセス", path: "#Access" },
         { title: "新着情報", path: "#News" },
-        { title: "お問い合せ", path: "/contactArea" }
+        { title: "先生のブログ", path: "/wp" },
+        { title: "お申し込み", path: "/contactArea" }
       ],
       drawer: false
     };

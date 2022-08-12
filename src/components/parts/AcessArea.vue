@@ -12,7 +12,7 @@
         </v-col>
         <v-col xs="12">
           <router-link to="/contactArea"
-            ><button>お問い合わせはこちら</button></router-link
+            ><button>お申し込みはこちら</button></router-link
           >
         </v-col>
       </v-col>
